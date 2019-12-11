@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import ImageCard from './ImageCard';
-import { tsPropertySignature } from '@babel/types';
+
 
 export default function ImageGetter() {
     const [astroData, setAstroData] = useState([]);
