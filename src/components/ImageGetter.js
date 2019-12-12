@@ -4,14 +4,14 @@ import ImageCard from './ImageCard';
 
 
 export default function ImageGetter() {
-    const [astroData, setAstroData] = useState([]);
+    const [astroData, setAstroData] = useState(Object);
 
     useEffect(() => {
         axios
         .get(`https://api.nasa.gov/planetary/apod?api_key=BqEDOxHAPDIiQ4XnIyJOPSYBAqE0j1wpbABEWnwu#`)
         .then(response => {
-            console.log(response)
-            setAstroData(response)
+           // console.log(response.data)
+           setAstroData(response.data)
         })//ends .then
         .catch(error => {
             console.log('data not returned', error)
@@ -20,16 +20,12 @@ export default function ImageGetter() {
 
     return (
         <div className='astro_container'>
-            {astroData.map(item => {
-                return (
-                    <ImageCard
-                    date={item.date}
-                    explanation={item.explanation}
-                    title={item.title}
-                    imgUrl={item.url}
-                    />//ends ImageCard
-                )//ends .map return
-            })}
+            <ImageCard
+            date={astroData.date}
+            explanation={astroData.explanation}
+            title={astroData.title}
+            imgUrl={astroData.url}
+            /> 
         </div>
     )
 }//ends component

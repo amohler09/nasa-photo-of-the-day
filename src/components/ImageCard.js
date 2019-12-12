@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ImageCard = props => {
+  console.log(props)
 
     return(
     <div className="img_container">
