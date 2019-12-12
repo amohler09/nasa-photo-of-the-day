@@ -2,14 +2,38 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const DateStyle = styled.p`
-color: red;
-background-color: blue;
+const Container = styled.div`
+max-width: 70%;
+text-align: center;
+margin: auto;
+margin-top: 10%;
+border: 2px dashed red;
+font-family: comic sans;
+font-weight: bold;
+padding: 5%;
 
 `;
 
-const Container = styled.p`
-max-width: 80%;
+const Header = styled.h1`
+
+`;
+
+const Date = styled.h2`
+color: red;
+`;
+
+const Image = styled.img`
+max-width: 70%;
+
+`;
+
+const Title = styled.h3`
+color: blue;
+`;
+
+const Explanation = styled.p`
+color: green;
+
 `;
 
 const ImageCard = props => {
@@ -17,10 +41,11 @@ const ImageCard = props => {
 
     return(
     <Container>
-      <DateStyle>Today's Date: {props.date}</DateStyle>
-      <img className='astro_photo' src={props.imgUrl} alt='astronomy' />
-      <h2>{props.title}</h2>
-      <p>{props.explanation}</p>
+      <Header>Astronomy Photo of the Day</Header>
+      <Date>Today's Date: {props.date}</Date>
+      <Image src={props.imgUrl} alt='astronomy' />
+      <Title>{props.title}</Title>
+      <Explanation>{props.explanation}</Explanation>
     </Container>
         
 
